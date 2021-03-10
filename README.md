@@ -1,6 +1,9 @@
 # Microbit Snake
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](/LICENSE) 
 
-This is a simple snake game to be played in Microbit. The published game can be found at [https://makecode.microbit.org/_9vHKY61LbYri](https://makecode.microbit.org/_9vHKY61LbYri)
+This is a simple snake game to be played in Microbit. The published game can be found at [Microbit Makecode - Microbit Snake](https://makecode.microbit.org/_JekDwMM3FJiA) or you could directly import this repository in [Makecode Microbit](https://makecode.microbit.org/).
+
+
 
 # Appendix - Microbit Extension Project
 > Open this page at [https://tekichan.github.io/microbit_snake/](https://tekichan.github.io/microbit_snake/)
@@ -35,3 +38,6 @@ This image may take a few minutes to refresh.
 ```html
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
 ```
+
+# Authors
+- Teki Chan *tekichan@gmail.com*
