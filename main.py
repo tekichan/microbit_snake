@@ -1,3 +1,37 @@
+"""
+Microbit Snake
+A snake game in Microbit
+
+Author: Teki Chan
+"""
+
+# Initialize variables
+
+# Next position (nextX, nextY)
+nextY = 0
+nextX = 0
+
+# Current position (currentX, currentY) and direction
+currentY = 0
+currentX = 0
+currentDirection = 0
+
+# Position of Fruit (dotX, dotY)
+dotY = 0
+dotX = 0
+
+# Temporary position of Fruit (tempDotX, tempDotY)
+tempDotY = 0
+tempDotX = 0
+
+snakeScore = 0      # Snake game score
+allowInput = 0      # Whether it allows to input
+gameRunning = 0     # Whether the game is running
+gameSpeed = 0       # Game speed
+snakePartsY: List[number] = []      # List of snake's parts' Y
+snakePartsX: List[number] = []  # List of snake's parts' X
+
+# Function: Get New Dot
 def getNewDot():
     global tempDotX, tempDotY, dotX, dotY
     tempDotX = randint(0, 4)
@@ -8,8 +42,12 @@ def getNewDot():
     dotX = tempDotX
     dotY = tempDotY
     led.plot(dotX, dotY)
+
+# Function: Drop off the tail during moving    
 def dropTail():
     led.unplot(snakePartsX.shift(), snakePartsY.shift())
+
+# Function: Reset and start a new game    
 def resetGame():
     global gameSpeed, gameRunning, allowInput, currentDirection, currentX, currentY, dotX, dotY, snakePartsX, snakePartsY, snakeScore
     basic.clear_screen()
@@ -27,6 +65,7 @@ def resetGame():
     led.plot(currentX, currentY)
     getNewDot()
 
+# Event handler: When Button A is pressed
 def on_button_pressed_a():
     global currentDirection, gameRunning
     if allowInput == 1:
@@ -34,8 +73,10 @@ def on_button_pressed_a():
             currentDirection = (currentDirection + 3) % 4
         else:
             gameRunning = 1
+# Add the event handler to the listener           
 input.on_button_pressed(Button.A, on_button_pressed_a)
 
+# Event handler: When Button B is pressed
 def on_button_pressed_b():
     global currentDirection, gameRunning
     if allowInput == 1:
@@ -43,8 +84,10 @@ def on_button_pressed_b():
             currentDirection = (currentDirection + 1) % 4
         else:
             gameRunning = 1
+# Add the event handler to the listener            
 input.on_button_pressed(Button.B, on_button_pressed_b)
 
+# Function: When the game loses
 def loseGame():
     global allowInput, gameRunning
     allowInput = 0
@@ -56,23 +99,8 @@ def loseGame():
     basic.show_number(snakeScore)
     basic.pause(2000)
     resetGame()
-nextY = 0
-nextX = 0
-snakeScore = 0
-currentY = 0
-currentX = 0
-currentDirection = 0
-allowInput = 0
-gameRunning = 0
-gameSpeed = 0
-snakePartsY: List[number] = []
-snakePartsX: List[number] = []
-dotY = 0
-dotX = 0
-tempDotY = 0
-tempDotX = 0
-resetGame()
 
+# Event handler: What the game does in forever loop
 def on_forever():
     global nextX, nextY, currentX, currentY, snakeScore, gameSpeed
     if gameRunning == 1:
@@ -106,4 +134,9 @@ def on_forever():
             else:
                 dropTail()
     basic.pause(gameSpeed)
+
+# Start the game by re-setting game
+resetGame()
+
+# Add the event handler to the forever manager
 basic.forever(on_forever)

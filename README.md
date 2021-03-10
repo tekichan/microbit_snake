@@ -2,6 +2,7 @@
 
 This is a simple snake game to be played in Microbit. The published game can be found at [https://makecode.microbit.org/_9vHKY61LbYri](https://makecode.microbit.org/_9vHKY61LbYri)
 
+# Appendix - Microbit Extension Project
 > Open this page at [https://tekichan.github.io/microbit_snake/](https://tekichan.github.io/microbit_snake/)
 
 ## Use as Extension
@@ -26,7 +27,7 @@ To edit this repository in MakeCode.
 This image shows the blocks code from the last commit in master.
 This image may take a few minutes to refresh.
 
-![A rendered view of the blocks](https://github.com/tekichan/microbit_snake/raw/master/.github/makecode/blocks.png)
+![A rendered view of the blocks](/.github/makecode/blocks.png)
 
 #### Metadata (used for search, rendering)
 
