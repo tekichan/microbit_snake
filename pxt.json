@@ -1,5 +1,5 @@
 {
-    "name": "greedy_snake",
+    "name": "py_snake_microbit",
     "description": "",
     "dependencies": {
         "core": "*",
