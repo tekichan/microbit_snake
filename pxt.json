@@ -1,5 +1,5 @@
 {
-    "name": "py_snake_microbit",
+    "name": "microbit_snake",
     "description": "",
     "dependencies": {
         "core": "*",
